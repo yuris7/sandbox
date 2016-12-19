@@ -1,30 +1,16 @@
-﻿apply plugin: 'application'
+version = "0.0.1"
+description = "Groovy examples"
+
+buildscript {
+	repositories { mavenCentral() }
+}
+
 apply plugin: 'java'
+apply plugin: 'application'
 
-repositories {
-    mavenCentral()
-}
+mainClassName = 'MyFirstProgram'
 
-sourceSets {
-    main {
-        java {
-            srcDirs 'src/main/java'
-        }
-    }
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
-    test {
-        java {
-            srcDir 'src/test/java'
-        }
-    }
-}
-
-dependencies {
-    testCompile 'junit:junit:4.11'
-}
-
-test {
-    testLogging {
-        events "passed", "skipped", "failed", "standardOut", "standardError"
-    }
-}
+repositories { mavenCentral() }
